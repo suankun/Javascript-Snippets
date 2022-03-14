@@ -21,7 +21,9 @@ function foodForPets(input) {
   const totalFoodEaten = foodEatenFromDog + foodEatenFromCat;
   console.log(`Total eaten biscuits: ${Math.round(biscuits)}gr.`);
   console.log(
-    `${`${(totalFoodEaten / totalFood) * 100}`}% of the food has been eaten.`
+    `${`${((totalFoodEaten / totalFood) * 100).toFixed(
+      2
+    )}`}% of the food has been eaten.`
   );
   console.log(
     `${`${((foodEatenFromDog / totalFoodEaten) * 100).toFixed(
