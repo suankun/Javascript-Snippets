@@ -1,39 +1,41 @@
 function foodForPets(input) {
   let index = 0;
-  const days = Number(input[index]);
+  let daysNumber = Number(input[index]);
   index++;
-  const totalFood = Number(input[index]);
+  let totalFood = Number(input[index]);
   index++;
-  let biscuits = 0;
+  let biscuitsEaten = 0;
   let foodEatenFromDog = 0;
   let foodEatenFromCat = 0;
-  for (let i = 1; i <= days; i++) {
+  let daysCounter = 0;
+  for (let i = 0; i < daysNumber; i++) {
     let tempFoodDog = Number(input[index]);
     index++;
     let tempFoodCat = Number(input[index]);
     index++;
-    if (i % 3 === 0) {
-      biscuits = (tempFoodDog + tempFoodCat) * 0.1;
+    daysCounter++;
+    if (daysCounter % 3 === 0) {
+      biscuitsEaten += (tempFoodDog + tempFoodCat) * 0.1;
     }
     foodEatenFromDog += tempFoodDog;
     foodEatenFromCat += tempFoodCat;
   }
   const totalFoodEaten = foodEatenFromDog + foodEatenFromCat;
-  console.log(`Total eaten biscuits: ${Math.round(biscuits)}gr.`);
+  console.log(`Total eaten biscuits: ${Math.round(biscuitsEaten)}gr.`);
   console.log(
-    `${`${((totalFoodEaten / totalFood) * 100).toFixed(
+    `${((totalFoodEaten / totalFood) * 100).toFixed(
       2
-    )}`}% of the food has been eaten.`
+    )}% of the food has been eaten.`
   );
   console.log(
-    `${`${((foodEatenFromDog / totalFoodEaten) * 100).toFixed(
+    `${((foodEatenFromDog / totalFoodEaten) * 100).toFixed(
       2
-    )}`}% eaten from the dog.`
+    )}% eaten from the dog.`
   );
   console.log(
-    `${`${((foodEatenFromCat / totalFoodEaten) * 100).toFixed(
+    `${((foodEatenFromCat / totalFoodEaten) * 100).toFixed(
       2
-    )}`}% eaten from the cat.`
+    )}% eaten from the cat.`
   );
 }
 
