@@ -1,5 +1,23 @@
 function traveling(input) {
-  //
+  let index = 0;
+  let command = input[index];
+  index++;
+  while (command !== "End") {
+    let budget = Number(input[index]);
+    index++;
+    let moneyCounter = 0;
+    while (budget >= moneyCounter) {
+      let savedMoney = Number(input[index]);
+      index++;
+      moneyCounter += savedMoney;
+      if (budget <= moneyCounter) {
+        console.log(`Going to ${command}!`);
+        break;
+      }
+    }
+    command = input[index];
+    index++;
+  }
 }
 
 traveling([
