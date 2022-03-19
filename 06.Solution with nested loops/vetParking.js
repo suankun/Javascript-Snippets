@@ -1,0 +1,5 @@
+function vetParking(input) {
+  //
+}
+
+vetParking;
