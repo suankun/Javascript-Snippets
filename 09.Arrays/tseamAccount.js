@@ -80,6 +80,7 @@ function tseamAccount(array) {
   console.log(account.join(" "));
 }
 
+// User input.
 tseamAccount([
   "CS WoW Diablo",
   "Install LoL",
